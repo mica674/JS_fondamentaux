@@ -6,30 +6,28 @@ function helloWorld(){
 console.log(helloWorld());
 
 // Exercice 2
-let firstnameS = 'Steve'
-
 function helloYou(firstname){
-    return `Bonjour ${firstname}`
+    return  firstname
 };
 
-console.log(helloYou(firstnameS));
+let firstnameS = helloYou('Steph');
+console.log(`Bonjour ${firstnameS}`);
 
 // Exercice 3
-function average(nb1, nb2){
-    let avg;
-    avg = (nb1 + nb2)/2
-    return avg;
+function average(firstNumber, secondNumber){
+    let avg = Number(firstNumber) + Number(secondNumber);
+    return avg/2;
 };
 
-console.log(`Petite phrase pour afficher le résultat : ${average(6,9)}`)
+console.log(average('6',9));
 
 // Exercice 4
-let arg = 'Wesh bien ?';
-let fonction_flechee = (argument) => (`Résultat : ${argument}. Nombre de caractères : ${argument.length}`);
+let fonction_flechee = (string) => (string + '(' + string.length + ')');
 
-console.log(fonction_flechee(arg));
+console.log(fonction_flechee('chaine'));
 
 // Exercice 5
+// howAreYou  = (name) =>  `Bonjour, ${name} ! Comment vas-tu ?`;
 function howAreYou(name){
     return `Bonjour, ${name} ! Comment vas-tu ?`;
 };
@@ -37,6 +35,7 @@ function howAreYou(name){
 console.log(howAreYou('Thierry'));
 
 // Exercice 6
+
 let n1 = 6;
 let n2 = 9;
 
@@ -44,4 +43,3 @@ let average3 = (nb1, nb2) => ((nb1+nb2)/2);
 
 console.log(`Calcul de ouf pour la moyenne de n1 et n2 : (n1+n2)/2 = ${average3(6,9)} 
 où n1 = ${n1} et n2 = ${n2}`);
-
