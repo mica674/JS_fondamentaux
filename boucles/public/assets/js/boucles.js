@@ -1,30 +1,33 @@
 // Exercice 1
-for (let index = 2020; index <= 2030; index++) {
-    console.log(index);
+for (let year = 2020 ; year <= 2030 ; year++) {
+    console.log(year);
 }
 
 // Exercice 2
-for (let index = 0; index <= 100; index++) {
-    if (index%7 === 0) {
-        console.log(index + ' est un multiple de 7');
+for (let mul7 = 0 ; mul7 <= 100 ; mul7++) {
+    if (mul7%7 === 0) {
+        console.log(mul7 + ' est un multiple de 7');
     }    
     else{
-        console.log(index);
+        console.log(mul7);
     };
 };
 
 // Exercice 3
-const languages = ['Javascript', 'Python', 'PHP', 'Java', 'SQL' ];
+const languages = ['Javascript', 'Python', 'PHP', 'Java', 'SQL'];
 
-for (let index = 0; index < languages.length; index++) {
-    console.log(languages[index]);  
+for (let langCount = 0 ; langCount < languages.length ; langCount++) {
+    console.log(languages[langCount]);  
 };
 
 // Exercice 4
 const days = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
-for (let index = 1; index < days.length+1; index++) {
-    console.log(index + ': ' + days[index-1]);
-};
+// for (let index = 1 ; index < days.length+1 ; index++) {
+//     console.log(index + ': ' + days[index-1]);
+// };
+
+days.forEach(function (value, index) {console.log(`${index+1} : ${value}`)})
+
 
 // Exercice 5
 let day = Math.random()*365+1;
