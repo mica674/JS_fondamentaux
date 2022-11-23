@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les événements</title>
+    <link rel="stylesheet" href="public/assets/css/style.css">
+</head>
+
+<body>
+    <h1>Les événements</h1>
+
+    <button id="btn_clickme">Click-me</button>
+    <img src="public/assets/img/JS.png" alt="" width="50%">
+    <ol>
+        <li>métier 1</li>
+        <li>métier 2</li>
+        <li>métier 3</li>
+        <li>métier 4</li>
+        <li>métier 5</li>
+    </ol>
+
+    <form action="" method="get" id="form" name="formName">
+        <input type="text" placeholder="Prénom" id="userFirstname" name="userFirstname" value="Mickaël">
+        <input type="text" placeholder="Nom" id="userLastname" name="userLastname" value="Fournier">
+        <select name="list" id="list">
+            <option value="1">Lundi</option>
+            <option value="2">Mardi</option>
+            <option value="3">Mercredi</option>
+            <option value="4">Jeudi</option>
+            <option value="5">Vendredi</option>
+            <option value="6">Samedi</option>
+            <option value="7">Dimanche</option>
+        </select>
+        <input type="button" name="button" value="Soumettres" onclick="submitName(formName)">
+    </form>
+
+
+    <h2>Ex1</h2>
+    <p>Dans une page HTML, créer un bouton "Click-me".
+        Au clic sur ce bouton, afficher dans la console "Click"
+    </p>
+
+    <h2>Ex2</h2>
+    <p>Dans une page HTML, intégrer une image.
+        Au survol de cette image, afficher dans la console,
+        la source de l'image.
+    </p>
+
+    <h2>Ex3</h2>
+    <p>Dans la console, pour chaque touche appuyée par l'utilisateur,
+        afficher:
+        code de la touche -> valeur de la touche (Ex: 13 -> "Enter")
+    </p>
+
+    <h2>Ex4</h2>
+    <p>Dans une page HTML, créer une liste de 5 métiers du numérique.
+        Dans la console,
+        afficher le métier du numérique sur lequel l'utilisateur clique.
+    </p>
+
+    <h2>Ex5</h2>
+    <p>Dans une page HTML, créer un formulaire
+        contenant un champs "firstname" et un champs "lastname".
+        A la validation du formulaire,
+        afficher la valeur du nom et du prénom dans la console.
+    </p>
+
+    <h2>Ex6</h2>
+    <p>Avec le formulaire de l'exercice 5,
+        lorsque l'utilisateur est dans un champs,
+        changer la couleur de fond,
+        et lorsqu'il quitte le champs, retirer la couleur de fond.
+    </p>
+
+    <h2>Ex7</h2>
+    <p>Dans le formulaire de l'exercice 5,
+        ajouter un select contenant les jours de la semaine.
+        Quand l'utilisateur choisi un élément de la liste,
+        afficher sa valeur (1 pour lundi, 2 pour mardi...)
+        dans la console
+    </p>
+
+    <h2>RESULTAT DANS LA CONSOLE</h2>
+
+    <script src="public/assets/js/Evenements.js"></script>
+</body>
+
+</html>

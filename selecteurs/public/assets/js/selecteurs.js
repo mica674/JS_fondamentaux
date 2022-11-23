@@ -5,6 +5,12 @@ let textToDisplay = 'Comment devenir un AS en JS';
 // Ajouter du text (textToDisplay) avant la fin (beforeend)
 text.insertAdjacentHTML('beforeend', textToDisplay);
 
+// Autre méthode : avec innerHTML
+getID = document.getElementById('text');
+getID.innerHTML = textToDisplay
+
+
+
 // Exercice 2
 // Obtenir l'élément qui a pour id='text'
 let baliseH1 = document.getElementById('text');
@@ -20,15 +26,24 @@ console.log(textClassDescript);
 
 // Obtenir tous les éléments de type li de la page HTML
 // Affecter à listLi sous forme de tableau
-let listLi = document.getElementsByTagName('li');
+let getListLi = document.getElementsByTagName('li');
+console.log(getListLi);
 // Pour chaque élément du tableau
 // Afficher le contenu HTML
-for (let index = 0; index < listLi.length; index++) {
-    console.log(listLi[index].innerHTML);
+console.log('                  Méthode avec for :');
+for (let index = 0; index < getListLi.length; index++) {
+    console.log(getListLi[index].innerHTML);
 }
 
-// Ca marche pas 
-// listLi.forEach(function(element) {console.log(element.innerHTML);});
+// Autre méthode avec foreach
+let listLi = document.querySelectorAll('li');
+console.log('                  Méthode avec foreach :');
+listLi.forEach((li)=>{
+    let getContentLi = li.innerHTML;
+    console.log(getContentLi);
+});
+
+
 
 // Exercice 3
 
@@ -39,6 +54,12 @@ for (index = 0; index < listLi.length; index++) {
     let listLiText = index+1 + ' - ';
     let addIndexList = listLi[index].insertAdjacentHTML('afterbegin', listLiText);
 }
+
+// Avec foreach
+listLi.forEach((value, index1)=>{
+    let textValue = value.innerHTML;
+    console.log(index1+1 + ' - ' + textValue);
+})
 
 // Exercice 4
 // Obtenir tous les div et les affecter à divFound sous forme de tableau
@@ -57,7 +78,9 @@ let span = document.getElementsByTagName('span')[0];
 // Ajouter une classe 'important' dans span
 span.classList.add('important');
 // Mettre en gras le texte contenu dans span
-span.style.fontWeight = 'bold';
+// span.style.fontWeight = 'bold';
+// Autre méthode avec setAttribute
+span.setAttribute('style', 'font-weight:bold');
 
 console.log(span);
 
