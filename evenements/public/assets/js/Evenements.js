@@ -5,17 +5,24 @@ let button = document.getElementsByTagName('button')[0];
 // Afficher "Click" quand l'événement est déclenché
 button.onclick = function () { console.log('Click') };
 
+// Autre méthode avec addEventListener
+let fnFn = ()=>{console.log('Click');};
+button.addEventListener('click', fnFn);
+
 
 // Exercice 2
 // Obtenir la première image du document HTML
 let image1 = document.getElementsByTagName('img')[0];
 // Fonction pour afficher la source de l'image dans la console
 function sourceImgConsole(image) {
-    return image.currentSrc;
+    return image.getAttribute('src'); // ou image.currentSrc; ca marche aussi
 }
 // Au passage du pointeur de la souris sur l'image
 // Afficher la source de l'image
-image1.onmouseover = function () { console.log(sourceImgConsole(image1)); };
+fnFn2 = ()=>{ console.log(sourceImgConsole(image1)); };
+image1.addEventListener('mouseover', fnFn2);
+// Autre méthode avec un "onmouseover"
+image1.onmouseover= ()=>{console.log(image1.src)};
 
 
 // Exercice 3
@@ -27,9 +34,21 @@ let touchValue = button.innerHTML;
 // Afficher touchId et touchValue
 button.onclick = function () { console.log(touchId + ' -> ' + touchValue); };
 
+document.addEventListener('keyup', function (event) {
+    console.log(event.keyCode + ' -> ' + event.key);
+})
 
 // Exercice 4
-// let getListLi = document.querySelectorAll('li');
+let getListLi = document.querySelectorAll('li');
+
+// getListLi.addEventListener('click', ()=>{console.log(getListLi.innerHTML);})
+
+getListLi.forEach((li)=>{
+    li.addEventListener('click', ()=>{
+    console.log(li.innerHTML);
+    })
+})
+
 // let getListLiHTML = getListLi[0].innerHTML;
 
 // if (getListLi[0].innerHTML == 'métier ' + 1) {
