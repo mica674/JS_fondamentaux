@@ -49,23 +49,6 @@ getListLi.forEach((li)=>{
     })
 })
 
-// let getListLiHTML = getListLi[0].innerHTML;
-
-// if (getListLi[0].innerHTML == 'métier ' + 1) {
-//     getListLi[0].onclick = function () {console.log(getListLi[0].innerHTML);}
-// } 
-// if (getListLi[1].innerHTML == 'métier ' + 2) {
-//     getListLi[1].onclick = function () {console.log(getListLi[1].innerHTML);}
-// } 
-
-
-// getListLi.forEach((value, ind) => {
-//     let textValue = value.innerHTML;
-//     console.log(textValue);
-//     if (textValue == 'métier ' + ind+1) {
-//         value.onclick = function () {console.log(textValue);}
-//     } 
-// });
 
 
 
@@ -80,6 +63,15 @@ function submitName(formName) {
     let lastname = document.formName.userLastname.value;
     // Afficher "firstname lastname" dans la console
     console.log(firstname + ' ' + lastname);
+    }
+
+    // Autre méthode avec input (type='submit'):
+        // let button = document.getElementById('button');
+
+        // button.addEventListener('click', (e) => {
+        //     e.preventDefault();
+        //     console.log(firstname + ' ' + lastname);
+        // }
 
     // Exercice 7
     // Obtenir l'index de l'élement sélectionné de "list"
@@ -88,19 +80,37 @@ function submitName(formName) {
     let dayOfWeek = document.formName.list.selectedIndex + 1;
     // Afficher "dayOfWeek" dans la console
     console.log(dayOfWeek);
-}
+        // Autre méthode
+            let day = document.querySelector('select');
+
+            day.addEventListener('change', (e)=>{
+                console.log(day.value); 
+                console.log(e.target.value); //les  deux méthodes fonctionnent
+            })
+
 
 
 
 // Exercice 6 :
-// Quand le pointeur passe sur le formulaire formName
-// Le background devient noir
-formName.onmouseover = function () { formName.style.background = 'black' };
-// Quand le pointeur sort de la zone du formulaire formName
-// Le changement de couleur du background est remise à "none"
-formName.onmouseleave = function () { formName.style.background = 'none' };
+        // // Quand le pointeur passe sur le formulaire formName
+        // // Le background devient noir
+        // formName.onmouseover = function () { formName.style.background = 'black' };
+        // // Quand le pointeur sort de la zone du formulaire formName
+        // // Le changement de couleur du background est remise à "none"
+        // formName.onmouseleave = function () { formName.style.background = 'none' };
 
+    // Correction
+    let allInput = document.querySelectorAll('input[type=text]');
 
+    allInput.forEach((input, index)=>{
+        input.addEventListener('focus', ()=>{
+            input.style.background = 'red'
+        })
+        input.addEventListener('blur', ()=>{
+            input.style.background = 'green'
+        })
+        console.log(input);
+    })
 
 // Exercice 7 :
 // VOIR EXERCICE 5
